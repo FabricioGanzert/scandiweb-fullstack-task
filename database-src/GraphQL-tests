@@ -1,0 +1,27 @@
+//all orders
+{  "query": "{ orders { id total_amount created_at }}" }
+
+// all categories
+{  "query": "{ categories { id name } }" }
+
+//all products
+{  "query": "{ categories { id name typename products { id name description inStock prices { amount currency { label symbol __typename } __typename } brand gallery attributes { id name type items { displayValue value id __typename } __typename } } } }" }
+
+//single product:
+{  "query": "{ product(id: \"huarache-x-stussy-le\") { id name description inStock brand prices { amount currency { label symbol } } gallery category { name } attributes { id name type items { displayValue value id } } }}" }
+
+//single order
+{  "query": "{ order(id: 2) { id total_amount created_at items { id product_id quantity price } }}" }
+
+// insert new order
+{  "query": "mutation AddToCart { createOrder(order: { items: [{ product_id: \"apple-iphone-12-pro\", quantity: 1, price: 1000.76, selectedAttributes: \"{ \\\"Color\\\": \\\"#03FFF7\\\", \\\"Capacity\\\": \\\"512G\\\" }\" }] }) { id total order_date } }"}
+
+// insert new order(2 items)
+{ "query": "mutation AddToCart { createOrder(order: { items: [ { product_id: \"apple-iphone-12-pro\", quantity: 1, price: 1000.76, selectedAttributes: \"{ \\\"Color\\\": \\\"#03FFF7\\\", \\\"Capacity\\\": \\\"512G\\\" }\" }, { product_id: \"samsung-galaxy-s21\", quantity: 2, price: 799.99, selectedAttributes: \"{ \\\"Color\\\": \\\"Black\\\" }\" }, { product_id: \"google-pixel-6\", quantity: 1, price: 699.99, selectedAttributes: \"{}\" } ] }) { id total order_date } }"}
+
+
+// all products from category 'clothes'
+{  "query": "{ products(category: \"clothes\") { id name inStock prices { amount currency { label symbol } } gallery category  } }" }
+
+// all products from category 'tech'
+{  "query": "{ products(category: \"tech\") { id name inStock prices { amount currency { label symbol } } gallery category  } }" 

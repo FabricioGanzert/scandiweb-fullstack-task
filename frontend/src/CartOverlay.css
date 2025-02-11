@@ -1,0 +1,219 @@
+
+/* Grey background overlay for cart */
+.overlay-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 55, 72, 0.65);
+  z-index: 900;
+  overflow: auto;
+}
+.item-count-bubble{
+  background-color: #010101;
+  color: #ffffff;
+  height:28px;
+  width:28px;
+  border-radius: 24px;
+  text-align: center;
+  position: absolute;
+  margin-left:24px;
+  margin-top: -5px;
+}
+/* Cart overlay positioning */
+.cart-overlay-wrapper {
+  position: fixed;
+  top: 75px; /* Adjust to align below header */
+  right: 20px;
+  z-index: 1000;
+  background-color: #ffffff;
+  padding: 10px;
+}
+.cart-title{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.app-container.cart-open .header.desktop-nav,
+.app-container.cart-open .mobile-nav {
+  background-color: rgba(57, 55, 72, 0.02);  
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto; /* Three columns: one for product info, one for image, and one for quantity controls */
+  gap: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  align-items: center;
+}
+
+.cart-item-price {
+  font-weight: bold;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-info h3 {
+  font-size: 18px;
+}
+
+.cart-total h3 {
+  position: relative;
+  font-size: 17px !important;
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+.cart-total span {
+  font-size: 17px; /* Ensure price is the same size as "Total" */
+  font-weight: bold;
+  position: absolute;
+  right: 6px;   /* must be equal to parent's right padding */
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+}
+
+.cart-item-quantity-controls {
+  display: flex;
+  flex-direction: column; /* Stack the buttons vertically */
+  align-items: center;    /* Center them horizontally */
+  gap: 8px;               /* Space between buttons */
+  justify-content: flex-start; /* Align buttons at the top */
+}
+
+.quantity-btn {
+  background-color: #f2f2f2;
+  border: 1px solid #010101;
+  padding: 0;
+  font-size: 16px;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width:28px;
+  height: 28px;
+  align-items: center;
+  display:grid
+}
+
+.quantity-btn:hover {
+  background-color: #e2e2e2;
+}
+
+.quantity-indicator {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Attributes Section Styling */
+.cart-item-attributes {
+  margin-top: 8px; /* Add space to separate the attributes from the product name/price */
+}
+
+.attribute-group {
+  margin-bottom: 8px; /* Add space between each attribute group */
+}
+
+.attribute-options {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+  gap: 6px; /* Space between options */
+}
+
+.attribute-option {
+  border: 1px solid black;
+  padding:5px;
+  width: 26px;
+  height: 26px;
+}
+
+.attribute-option-swatch{
+  margin:0 !important;
+  box-sizing: content-box;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  display: inline-block;
+  padding-top:1px;
+}
+
+.attribute-option-selected {
+  box-sizing: content-box;
+  border: 2px solid black;
+  background-color: black;
+  color:white;
+  padding: 6px;
+}
+
+.attribute-option-swatch-selected {
+  border: 2px solid #5ece7b;
+  margin:0 !important;
+  box-sizing: content-box;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  padding-top:1px;
+}
+
+.color-swatch {
+  box-sizing: content-box;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.color-swatch.selected {
+  border: 2px solid black;
+  background-color: black;
+  color:white;
+}
+
+.place-order-button{
+  margin-top: 18px;
+  width: 100%;
+  background-color:#5ece7b;
+  color: #ffffff;
+  border:0;
+  padding: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.place-order-button-disabled{
+  margin-top: 18px;
+  width: 100%;
+  background-color:#ffffff;
+  color: #888888;
+  border:0;
+  padding: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.app-container.cart-open .header-center .img-header-center {
+  opacity: 0.08 !important;
+}
+
+.app-container.cart-open .img-shopping-cart {
+  fill-opacity: inherit !important;
+}

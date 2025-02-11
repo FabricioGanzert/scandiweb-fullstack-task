@@ -1,0 +1,17 @@
+{
+    "name": "ubuntu/backend",
+    "type": "project",
+"autoload": {
+    "psr-4": {
+        "App\\": "App/"
+    }
+},
+    "authors": [
+        {
+            "name": "Fabricio Ganzert"
+        }
+    ],
+    "require": {
+        "webonyx/graphql-php": "^15.19"
+    }
+}
